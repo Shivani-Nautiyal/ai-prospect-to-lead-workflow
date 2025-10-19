@@ -1,0 +1,63 @@
+{
+  "workflow_name": "Prospect-to-Lead Pipeline",
+  "description": "Automated B2B lead generation workflow using AI agents",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "id": "prospect_search",
+      "agent_class": "ProspectSearchAgent",
+      "description": "Searches and retrieves potential B2B prospects",
+      "inputs": {
+        "industry": "technology",
+        "company_size": "startup",
+        "limit": 5
+      },
+      "output_schema": {
+        "type": "list",
+        "items": {
+          "company_name": "string",
+          "contact_name": "string",
+          "email": "string",
+          "industry": "string"
+        }
+      }
+    },
+    {
+      "id": "scoring",
+      "agent_class": "ScoringAgent",
+      "description": "Scores and ranks prospects based on various criteria",
+      "inputs": {
+        "prospects": "{{prospect_search.output}}"
+      },
+      "output_schema": {
+        "type": "list",
+        "items": {
+          "company_name": "string",
+          "contact_name": "string",
+          "email": "string",
+          "score": "number",
+          "rank": "number"
+        }
+      }
+    },
+    {
+      "id": "outreach_content",
+      "agent_class": "OutreachContentAgent",
+      "description": "Generates personalized outreach emails for top prospects",
+      "inputs": {
+        "scored_prospects": "{{scoring.output}}",
+        "top_n": 3
+      },
+      "output_schema": {
+        "type": "list",
+        "items": {
+          "company_name": "string",
+          "contact_name": "string",
+          "email": "string",
+          "subject": "string",
+          "message": "string"
+        }
+      }
+    }
+  ]
+}
