@@ -161,10 +161,10 @@ SENDGRID_KEY=...               # For email sending (optional)
 
 ## 👥 Author
 
-**Your Name**
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your Profile](https://linkedin.com/in/yourprofile)
+**Shivani Nautiyal**
+- Email: shivaninautiyal1812@gmail.com
+- LinkedIn: www.linkedin.com/in/shivani-nautiyal-18xyz
+
 
 ## 📄 License
 
@@ -177,5 +177,6 @@ MIT License - Free to use and modify
 - Inspired by modern AI agent architectures
 
 ---
+
 
 **Built with ❤️ using Python and AI**
